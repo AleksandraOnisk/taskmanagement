@@ -1,5 +1,7 @@
 package pl.javastart.olita.taskmanagement;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -11,7 +13,10 @@ public class Task {
     private Long id;
 
     private String title;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate executionDate;
+
     private String description;
 
     @Enumerated(EnumType.STRING)
